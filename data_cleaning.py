@@ -20,8 +20,8 @@ df.describe()
 print(df.describe())
 
 # Check categorical variables
-print(df['category'].value_counts) 
-print(df['upload_day'].value_counts)
+print(df['category'].value_counts()) 
+print(df['upload_day'].value_counts())
 
 # Save the cleaned dataset
 df.to_csv("cleaned_viral_videos.csv", index=False)
