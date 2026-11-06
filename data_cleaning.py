@@ -15,11 +15,23 @@ print(df.isnull().sum())
 df.duplicated().sum()
 print(df.duplicated().sum())
 
+# Remove duplicate videos
+df = df.drop_duplicates(subset="video_id")
+
+# Remove missing target values
+df = df.dropna(subset=["viral"])
+
+# Validate target and other features
+df = df[df["viral"].isin([0, 1])
+        & df["upload_hour"].between(0, 23)
+        & df["thumbnail_face"].isin([0, 1])
+    ].copy()
+
 # Check numerical Variables Summary
 df.describe()
 print(df.describe())
 
-# Check categorical variables
+# Check misspelling
 print(df['category'].value_counts()) 
 print(df['upload_day'].value_counts())
 
