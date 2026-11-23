@@ -12,6 +12,16 @@ print(df.shape)
 print("\nVideo Categories:")
 print(df["category"].value_counts())
 
+# Overall viral distribution
+print("\nOverall Viral Distribution:")
+print(df["viral"].value_counts())
+
+# Overall viral rate (%)
+overall_viral_rate = df["viral"].mean() * 100
+
+print("\nOverall Viral Rate (%):")
+print(round(overall_viral_rate, 2))
+
 # Step 2: Calculate viral rate by category
 viral_rate = df.groupby("category")["viral"].mean() * 100
 
@@ -24,16 +34,26 @@ print(viral_rate.round(2))
 # Plot viral rate by category
 viral_rate.plot(kind="bar", figsize=(10, 5))
 
+# Add overall viral rate reference line
+plt.axhline(
+    y=overall_viral_rate,
+    color="red",
+    linestyle="--",
+    label=f"Overall Viral Rate ({overall_viral_rate:.1f}%)"
+)
+
 plt.title("Viral Rate by Video Category")
 plt.xlabel("Video Category")
 plt.ylabel("Viral Rate (%)")
 plt.xticks(rotation=45)
+plt.legend()
 plt.tight_layout()
 
 # Save chart 1 as PNG
 plt.savefig("viral_rate_by_category.png", dpi=300)
-print("Chart saved successfully!")
+plt.close()
 
+print("Chart saved successfully!")
 
 # Step 3: Average video duration by category
 avg_duration = df.groupby("category")["duration_sec"].mean()
