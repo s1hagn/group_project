@@ -185,8 +185,11 @@ app.layout = html.Div([
                     step=1,
                     value=[0, max_duration],
                     marks={
-                        0: "0",
-                        max_duration: str(max_duration)
+                        0: {"label": "0", "style": {"color": TEXT}},
+                        max_duration: {
+                            "label": str(max_duration),
+                            "style": {"color": TEXT}
+                        }
                     },
                     tooltip={"placement": "bottom"}
                 )
