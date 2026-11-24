@@ -112,7 +112,7 @@ app.layout = html.Div([
     # HEADER
     html.Div([
         html.P(
-            "DATA SCIENCE TOOLBOX · GROUP PROJECT",
+            "YOUTUBE VIRALITY ANALYTICS",
             style={
                 "color": BLUE,
                 "fontSize": "14px",
