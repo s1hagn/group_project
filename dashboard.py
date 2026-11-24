@@ -104,7 +104,7 @@ def image_card(title, filename, description):
 
 # 4. CREATE DASH APPLICATION
 
-app = Dash(__name__)
+app = Dash(__name__, assets_folder=str(BASE_DIR / "assets"))
 app.title = "YouTube Viral Intelligence"
 
 app.layout = html.Div([
