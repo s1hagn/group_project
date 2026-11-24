@@ -112,7 +112,7 @@ app.layout = html.Div([
     # HEADER
     html.Div([
         html.P(
-            "DATA SCIENCE TOOLBOX · GROUP PROJECT",
+            "YOUTUBE VIRALITY ANALYTICS",
             style={
                 "color": BLUE,
                 "fontSize": "14px",
@@ -185,8 +185,11 @@ app.layout = html.Div([
                     step=1,
                     value=[0, max_duration],
                     marks={
-                        0: "0",
-                        max_duration: str(max_duration)
+                        0: {"label": "0", "style": {"color": TEXT}},
+                        max_duration: {
+                            "label": str(max_duration),
+                            "style": {"color": TEXT}
+                        }
                     },
                     tooltip={"placement": "bottom"}
                 )
@@ -272,7 +275,7 @@ app.layout = html.Div([
             image_card(
                 "Viral Rate Heatmap",
                 "viral_rate_heatmap.png",
-                "Viral rate patterns across upload times."
+                "Viral rate by video category and duration group."
             )
         ], style={"marginTop": "20px"})
 
