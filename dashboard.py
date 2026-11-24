@@ -275,7 +275,7 @@ app.layout = html.Div([
             image_card(
                 "Viral Rate Heatmap",
                 "viral_rate_heatmap.png",
-                "Viral rate patterns across upload times."
+                "Viral rate by video category and duration group."
             )
         ], style={"marginTop": "20px"})
 
