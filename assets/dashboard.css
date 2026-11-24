@@ -1,0 +1,31 @@
+/* Keep duration values readable on the light input background. */
+#duration-filter input[type="number"] {
+    color: #111827;
+    background-color: #f8fafc;
+    border: 1px solid #94a3b8;
+    -webkit-text-fill-color: #111827;
+    caret-color: #111827;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 1;
+    color-scheme: light;
+}
+
+#duration-filter input[type="number"]::selection {
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    background-color: #1d4ed8;
+}
+
+#duration-filter input[type="number"]:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 2px;
+}
+
+#duration-filter .dash-slider-tooltip,
+#duration-filter .rc-slider-tooltip-inner {
+    color: #111827;
+    -webkit-text-fill-color: #111827;
+    background-color: #f8fafc;
+    font-weight: 700;
+}
